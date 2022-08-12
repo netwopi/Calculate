@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table>
+    <tr th:each="prod : ${my}">
+        <td th:text="${prod.numOne}"></td>
+        <td th:text="${prod.expr}"></td>
+        <td th:text="${prod.numTwo} + ' = '"></td>
+        <td th:text="${prod.resylt}"></td>
+    </tr>
+</table>
+</body>
+<body>
+<form th:action="@{'/'}" method="get">
+    <input type="submit" value="Назад" >
+    </form>
+</body>
+</html>

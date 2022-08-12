@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Res</title>
+</head>
+<body>
+<form th:action="@{'/'}" th:object="${expression}" method="post">
+    <input type="text" th:field="*{numOne}"/>
+    <input type="text" th:field="*{numTwo}"/>
+    <input type="text" placeholder="Enter operation" th:field="*{expr}"/>
+    <input type="submit" placeholder="Enter operation" th:field="*{expr}"/>
+    <div><input type="submit" value="Calculate"/></div>
+</form>
+<br/>
+
+</body>
+<body>
+<form th:action="@{'/multiplication'}" method="post" th:object="${expression}">
+    <input type="text" th:field="*{numOne}"/>
+    <input type="text" th:field="*{numTwo}"/>
+    <input type="submit" value="*">
+    <p th:text="${result1}"></p>
+</form>
+<form th:action="@{'/division'}" method="post" th:object="${expression}">
+    <input type="text" th:field="*{numOne}"/>
+    <input type="text" th:field="*{numTwo}"/>
+    <input type="submit" value="/">
+    <p th:text="${result2}"></p>2
+</form>
+<form th:action="@{'/addition'}" method="post" th:object="${expression}">
+    <input type="text" th:field="*{numOne}"/>
+    <input type="text" th:field="*{numTwo}"/>
+    <input type="submit" value="+">
+    <p th:text="${result3}"></p>
+</form>
+<form th:action="@{'/subtraction'}" method="post" th:object="${expression}">
+    <input type="text" th:field="*{numOne}"/>
+    <input type="text" th:field="*{numTwo}"/>
+    <input type="submit" value="-">
+    <p th:text="${result4}"></p>
+</form>
+<p th:text="${result}"></p>
+<form th:action="@{'/my'}" method="get">
+    <input type="submit"  value="Посмотреть придыдущие результаты ">
+</form>
+
+</body>
+</html>
